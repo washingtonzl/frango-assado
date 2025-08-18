@@ -112,7 +112,7 @@
 
     <div class="container">
         <h1>Frango Assado CL</h1>
-        <img src="https://i.imgur.com/DKm2G7f.png" alt="Frango Assado" class="product-image">
+        <img src="frango.png" width="100" height="100">
         <p class="price">R$ 55,00</p>
 
         <div class="quantity-selector">
