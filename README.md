@@ -150,7 +150,7 @@
         function enviarPedido() {
             const numeroWhatsApp = "63992028047";
             const quantidade = document.getElementById("quantidade").value;
-            const valorTotal = 59,99 * quantidade;
+            const valorTotal = 59.99 * quantidade;
             const tipoEntrega = document.querySelector('input[name="tipo_entrega"]:checked').value;
             let detalhesEntrega = "";
 
@@ -169,7 +169,7 @@
             const mensagem = `Olá! Gostaria de fazer um novo pedido:\n\n*Produto:* Frango Assado\n*Quantidade:* ${quantidade}\n*Valor Total:* R$ ${valorTotal.toFixed(2)}${detalhesEntrega}`;
 
             // Cria o link para o WhatsApp
-            const linkWhatsApp = `https://wa.me/55${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            const linkWhatsApp = `https://wa.me/59.99${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
             // Redireciona para o WhatsApp
             window.open(linkWhatsApp, '_blank');
