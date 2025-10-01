@@ -112,7 +112,7 @@
 
     <div class="container">
         <h1>Frango Assado CL</h1>
-        <img src="frango.png" width="100" height="100">
+        <img src="frango.png" alt="Frango Assado" width="100" height="100">
         <p class="price">R$ 59,99</p>
 
         <div class="quantity-selector">
@@ -143,21 +143,33 @@
     <script>
         function toggleEndereco(show) {
             const enderecoDiv = document.getElementById('endereco-div');
+            // Altera a visibilidade do campo de endereço com base na opção selecionada
             enderecoDiv.style.display = show ? 'block' : 'none';
         }
 
         // Função JavaScript para enviar o pedido
         function enviarPedido() {
-            const numeroWhatsApp = "63992028047";
-            const quantidade = document.getElementById("quantidade").value;
-            const valorTotal = 59.99 * quantidade;
+            // *CERTIFIQUE-SE DE INCLUIR O CÓDIGO DO PAÍS (55 para Brasil) E O DDD!*
+            // Exemplo: 55 (código do Brasil) + 63 (DDD) + 992028047 (número) -> 5563992028047
+            const numeroWhatsApp = "5563992028047"; // Número no formato internacional (país + DDD + número)
+            const precoUnitario = 59.99; // Preço fixo do produto
+
+            const quantidade = parseInt(document.getElementById("quantidade").value, 10);
+            
+            // Verifica se a quantidade é um número válido e maior que 0
+            if (isNaN(quantidade) || quantidade < 1) {
+                alert("Por favor, insira uma quantidade válida (mínimo 1).");
+                return;
+            }
+
+            const valorTotal = precoUnitario * quantidade;
             const tipoEntrega = document.querySelector('input[name="tipo_entrega"]:checked').value;
             let detalhesEntrega = "";
 
             if (tipoEntrega === 'Entrega') {
                 const endereco = document.getElementById('endereco-input').value;
                 if(endereco.trim() === "") {
-                    alert("Por favor, preencha o endereço para entrega.");
+                    alert("Por favor, preencha o endereço completo para entrega.");
                     return;
                 }
                 detalhesEntrega = `\n*Endereço para Entrega:* ${endereco}`;
@@ -166,14 +178,21 @@
             }
 
             // Mensagem que será enviada
-            const mensagem = `Olá! Gostaria de fazer um novo pedido:\n\n*Produto:* Frango Assado\n*Quantidade:* ${quantidade}\n*Valor Total:* R$ ${valorTotal.toFixed(2)}${detalhesEntrega}`;
+            const mensagem = `Olá! Gostaria de fazer um novo pedido:\n\n*Produto:* Frango Assado\n*Quantidade:* ${quantidade}\n*Valor Total:* R$ ${valorTotal.toFixed(2).replace('.', ',')}${detalhesEntrega}`;
+            // toFixed(2) para 2 casas decimais e replace para trocar ponto por vírgula no Brasil
 
             // Cria o link para o WhatsApp
-            const linkWhatsApp = `https://wa.me/59.99${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            // A CORREÇÃO ESTÁ AQUI: usando o numeroWhatsApp no lugar correto.
+            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
             // Redireciona para o WhatsApp
             window.open(linkWhatsApp, '_blank');
         }
+        
+        // Inicializa o estado do campo de endereço ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleEndereco(document.getElementById('entrega').checked);
+        });
     </script>
 
 </body>
