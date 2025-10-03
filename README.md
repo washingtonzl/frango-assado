@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frango Assado CL</title>
+    <title>Bobó de camarão🍤</title>
     <style>
-        /* Estilos CSS para a aparência do site */
+    
         body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
@@ -111,9 +111,10 @@
 <body>
 
     <div class="container">
-        <h1>Frango Assado CL</h1>
-        <img src="frango.png" alt="Frango Assado" width="100" height="100">
-        <p class="price">R$ 59,99</p>
+        <h1>Bobó de camarão</h1>
+        <img src="frango.png" alt="Bobó de camarão" width="100" height="100">
+        <p class="price">R$ 30</p>
+        <p local: Braseiro carnes e frios </p></p>
 
         <div class="quantity-selector">
             <label for="quantidade">Quantidade:</label>
@@ -121,8 +122,9 @@
         </div>
 
         <div class="delivery-options">
-            <input type="radio" id="entrega" name="tipo_entrega" value="Entrega" checked onclick="toggleEndereco(true)">
-            <label for="entrega">Entrega</label>
+            <input type="radio" id="entrega" name="tipo_entrega" value="Entrega"="toggleEndereco(true)">
+            <label for="entrega"> 
+            </label>
             
             <input type="radio" id="retirada" name="tipo_entrega" value="Retirada" onclick="toggleEndereco(false)">
             <label for="retirada">Retirada</label>
@@ -137,6 +139,7 @@
 
         <footer>
             <p>Clique em "Comprar Agora" para fazer seu pedido pelo WhatsApp.</p>
+            <p>Local para retirada: Braseiro Carnes e Frios!!.</p>
         </footer>
     </div>
 
@@ -151,8 +154,8 @@
         function enviarPedido() {
             // *CERTIFIQUE-SE DE INCLUIR O CÓDIGO DO PAÍS (55 para Brasil) E O DDD!*
             // Exemplo: 55 (código do Brasil) + 63 (DDD) + 992028047 (número) -> 5563992028047
-            const numeroWhatsApp = "5563992028047"; // Número no formato internacional (país + DDD + número)
-            const precoUnitario = 59.99; // Preço fixo do produto
+            const numeroWhatsApp = "556392240626"; // Número no formato internacional (país + DDD + número)
+            const precoUnitario = 30.00; // Preço fixo do produto
 
             const quantidade = parseInt(document.getElementById("quantidade").value, 10);
             
@@ -178,7 +181,7 @@
             }
 
             // Mensagem que será enviada
-            const mensagem = `Olá! Gostaria de fazer um novo pedido:\n\n*Produto:* Frango Assado\n*Quantidade:* ${quantidade}\n*Valor Total:* R$ ${valorTotal.toFixed(2).replace('.', ',')}${detalhesEntrega}`;
+            const mensagem = `Olá! Gostaria de fazer um novo pedido:\n\n*Produto:* Bobó de camarão\n*Quantidade:* ${quantidade}\n*Valor Total:* R$ ${valorTotal.toFixed(2).replace('.', ',')}${detalhesEntrega}`;
             // toFixed(2) para 2 casas decimais e replace para trocar ponto por vírgula no Brasil
 
             // Cria o link para o WhatsApp
