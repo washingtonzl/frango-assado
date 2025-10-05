@@ -113,7 +113,7 @@
         <h1>Bobó de camarão</h1>
         <img src="frango.png" alt="Bobó de camarão" width="100" height="100">
         <p class="price">R$ 30</p>
-        <p local: Braseiro carnes e frios </p></p>
+        <h1> local: Braseiro carnes e frios</h1>
 
         <div class="quantity-selector">
             <label for="quantidade">Quantidade:</label>
@@ -121,9 +121,7 @@
         </div>
 
         <div class="delivery-options">
-            <input type="radio" id="entrega" name="tipo_entrega" value="Entrega"="toggleEndereco(true)">
-            <label for="entrega"> 
-            </label>
+    
             
             <input type="radio" id="retirada" name="tipo_entrega" value="Retirada" onclick="toggleEndereco(false)">
             <label for="retirada">Retirada</label>
