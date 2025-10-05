@@ -112,9 +112,9 @@
 
     <div class="container">
         <h1>Bobó de camarão</h1>
-        <img src="frango.png" alt="Bobó de camarão" width="100" height="100">
+        <img src="camarão.png" alt="Bobó de camarão" width="100" height="100">
         <p class="price">R$ 30</p>
-        <p local: Braseiro carnes e frios </p></p>
+        <h1 local: Braseiro carnes e frios </h1>
 
         <div class="quantity-selector">
             <label for="quantidade">Quantidade:</label>
@@ -122,8 +122,8 @@
         </div>
 
         <div class="delivery-options">
-            <input type="radio" id="entrega" name="tipo_entrega" value="Entrega"="toggleEndereco(true)">
-            <label for="entrega"> 
+            <input type="radio" id="entrega" name="tipo_entrega"
+            <label for
             </label>
             
             <input type="radio" id="retirada" name="tipo_entrega" value="Retirada" onclick="toggleEndereco(false)">
@@ -139,7 +139,7 @@
 
         <footer>
             <p>Clique em "Comprar Agora" para fazer seu pedido pelo WhatsApp.</p>
-            <p>Local para retirada: Braseiro Carnes e Frios!!.</p>
+            <h1>Local para retirada: Braseiro Carnes e Frios!!.</h1>
         </footer>
     </div>
 
@@ -169,7 +169,7 @@
             const tipoEntrega = document.querySelector('input[name="tipo_entrega"]:checked').value;
             let detalhesEntrega = "";
 
-            if (tipoEntrega === 'Entrega') {
+            if (tipoEntrega === 'Retirada') {
                 const endereco = document.getElementById('endereco-input').value;
                 if(endereco.trim() === "") {
                     alert("Por favor, preencha o endereço completo para entrega.");
